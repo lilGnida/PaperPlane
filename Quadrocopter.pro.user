@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 6.0.2, 2022-02-03T00:32:52. -->
+<!-- Written by QtCreator 6.0.2, 2022-02-07T23:18:21. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -413,7 +413,6 @@
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/Users/nikitaandreev/Desktop/Programming/build-Map-Desktop_Qt_5_15_2_clang_64bit-Debug/Quadrocopter.app/Contents/MacOS</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

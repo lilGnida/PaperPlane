@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPropertyAnimation>
 #include "Map/controller.h"
 #include "Map/mapviewcontroller.h"
 #include "network/networkcontroller.h"
@@ -30,7 +31,9 @@ private:
     QString dbPath = "/Users/nikitaandreev/Desktop/Programming/Quadrocopter/LandMap/z%1/0/0/0.0.sqlitedb";
     QString dbWithCitiesPath = "/Users/nikitaandreev/Desktop/Programming/Quadrocopter/Both/z%1/0/0/0.0.sqlitedb";
 
-    int zScale = 1;
+    int zScale = 3;
+
+    QPropertyAnimation *sideBarAnimation;
 
 public slots:
     void addItemToScene(QGraphicsPixmapItem *item);
@@ -45,5 +48,6 @@ private slots:
     void on_reloadMap_triggered();
     void on_connectDB_triggered();
     void on_manageConnections_triggered();
+    void on_sideBarMenuButton_clicked();
 };
 #endif // MAINWINDOW_H

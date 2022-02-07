@@ -5,6 +5,9 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    this->setAttribute(Qt::WA_TranslucentBackground, true);
+
     ui->setupUi(this);
     ui->graphicsView->setMouseTracking(true);
 
@@ -17,9 +20,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->show();
 
     emit controller->loadMap(dbPath, zScale);
+    ui->graphicsView->scale(4, 4);
 
     connect(ui->graphicsView, &MapViewController::scaleValueChanged, this, &MainWindow::scaleValueChanged);
     connect(ui->graphicsView, &MapViewController::dragInAction, this, &MainWindow::dragInAction);
+
+    sideBarAnimation = new QPropertyAnimation(ui->sideBarFrame, "minimumWidth");
+    sideBarAnimation->setDuration(250);
 }
 
 MainWindow::~MainWindow()
@@ -77,7 +84,7 @@ void MainWindow::on_zoomInButton_clicked()
 
 void MainWindow::on_zoomOutButton_clicked()
 {
-    if (zScale > 1) {
+    if (zScale > 3) {
         ui->graphicsView->scale(0.5, 0.5);
         zScale--;
         ui->verticalSlider->setValue(zScale);
@@ -122,5 +129,19 @@ void MainWindow::on_connectDB_triggered()
 void MainWindow::on_manageConnections_triggered()
 {
     networkController->showConnectionManagmentWindow();
+}
+
+
+void MainWindow::on_sideBarMenuButton_clicked()
+{
+    if (ui->sideBarFrame->width() < 300) {
+        sideBarAnimation->setStartValue(36);
+        sideBarAnimation->setEndValue(300);
+        sideBarAnimation->start();
+    } else {
+        sideBarAnimation->setStartValue(300);
+        sideBarAnimation->setEndValue(36);
+        sideBarAnimation->start();
+    }
 }
 
