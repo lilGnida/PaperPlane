@@ -14,18 +14,14 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow
+   <string notr="true">QFrame
 {
-	background-color: rgba(255, 255, 255, 50);
-	border-radius: 25px;
+	background-color: rgba(255,255,255,100);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">QWidjet
-{
-	background-color: rgba(255, 255, 255, 50);
-}</string>
+    <string notr="true"/>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <property name="spacing">
@@ -63,12 +59,7 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QFrame
-{
-	background-color: rgba(255,255,255,100);
-}
-
-QPushButton
+         <string notr="true">QPushButton
 {
 	background-color: rgba(255, 255, 255, 0);
 	color: #fff;
@@ -266,12 +257,37 @@ QPushButton::pressed
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_2">
+       <widget class="QFrame" name="sideHiddenMenuFrame">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>250</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="mapFrame">
         <property name="minimumSize">
          <size>
           <width>500</width>
           <height>0</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -301,10 +317,7 @@ QPushButton::pressed
          <item>
           <widget class="MapViewController" name="graphicsView">
            <property name="styleSheet">
-            <string notr="true">QGraphicsView
-{
-	background-color: rgba(255,255,255,100);
-}</string>
+            <string notr="true"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>

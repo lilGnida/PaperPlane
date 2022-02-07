@@ -6,6 +6,10 @@ NewUdpConnection::NewUdpConnection(QWidget *parent) :
     ui(new Ui::NewUdpConnection)
 {
     ui->setupUi(this);
+
+    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    this->setAttribute(Qt::WA_TranslucentBackground, true);
+
     ui->ip_lineEdit->setIpValidation();
     ui->port_lineEdit->setPortValidation();
 }

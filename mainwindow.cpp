@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->graphicsView, &MapViewController::scaleValueChanged, this, &MainWindow::scaleValueChanged);
     connect(ui->graphicsView, &MapViewController::dragInAction, this, &MainWindow::dragInAction);
 
-    sideBarAnimation = new QPropertyAnimation(ui->sideBarFrame, "minimumWidth");
+    sideBarAnimation = new QPropertyAnimation(ui->sideHiddenMenuFrame, "minimumWidth");
     sideBarAnimation->setDuration(250);
 }
 
@@ -134,13 +134,13 @@ void MainWindow::on_manageConnections_triggered()
 
 void MainWindow::on_sideBarMenuButton_clicked()
 {
-    if (ui->sideBarFrame->width() < 300) {
-        sideBarAnimation->setStartValue(36);
-        sideBarAnimation->setEndValue(300);
+    if (ui->sideHiddenMenuFrame->width() < 250) {
+        sideBarAnimation->setStartValue(0);
+        sideBarAnimation->setEndValue(250);
         sideBarAnimation->start();
     } else {
-        sideBarAnimation->setStartValue(300);
-        sideBarAnimation->setEndValue(36);
+        sideBarAnimation->setStartValue(250);
+        sideBarAnimation->setEndValue(0);
         sideBarAnimation->start();
     }
 }

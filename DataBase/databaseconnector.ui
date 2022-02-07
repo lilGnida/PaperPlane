@@ -7,84 +7,215 @@
     <x>0</x>
     <y>0</y>
     <width>610</width>
-    <height>150</height>
+    <height>80</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>610</width>
-    <height>150</height>
+    <height>80</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>610</width>
-    <height>120</height>
+    <height>80</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <property name="styleSheet">
+   <string notr="true">QWidjet
+{
+	border-radius: 5px;
+}
+
+QFrame#frame
+{
+	background-color: rgba(255,255,255,70);
+	border-radius: 5px;
+}
+
+QLineEdit
+{
+	background-color: rgba(255,255,255,70);
+	border-radius: 3px;
+}
+
+QLabel
+{
+	background-color: rgba(255,255,255,0);
+}
+
+QPushButton
+{
+	background-color: rgba(255, 255, 255, 70);
+	color: #fff;
+	font-size: 15px;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+QPushButton::pressed
+{
+	background-color: rgba(255,255,255,50);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>5</number>
+   </property>
+   <property name="topMargin">
+    <number>5</number>
+   </property>
+   <property name="rightMargin">
+    <number>5</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLineEdit" name="lineEdit">
-         <property name="placeholderText">
-          <string>Укажите путь к базе данных или нажмите кнопку справа</string>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="topFrame">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>5</number>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="chooseButton">
-         <property name="text">
-          <string>...</string>
+         <property name="leftMargin">
+          <number>3</number>
          </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="Line" name="line">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="connectionStatus">
-         <property name="text">
-          <string>Статус: Не подключена</string>
+         <property name="topMargin">
+          <number>3</number>
          </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+         <property name="rightMargin">
+          <number>3</number>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
+         <property name="bottomMargin">
+          <number>3</number>
          </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="cancelButton">
-         <property name="text">
-          <string>Закрыть</string>
+         <item>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="placeholderText">
+            <string>Укажите путь к базе данных или нажмите кнопку справа</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="chooseButton">
+           <property name="text">
+            <string>...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="bottomFrame">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>0</number>
          </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
+         <property name="leftMargin">
+          <number>3</number>
+         </property>
+         <property name="topMargin">
+          <number>3</number>
+         </property>
+         <property name="rightMargin">
+          <number>3</number>
+         </property>
+         <property name="bottomMargin">
+          <number>3</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="connectionStatus">
+           <property name="text">
+            <string>Статус: Не подключена</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="cancelButton">
+           <property name="text">
+            <string>Закрыть</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

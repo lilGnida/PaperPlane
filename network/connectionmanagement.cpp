@@ -6,6 +6,9 @@ ConnectionManagement::ConnectionManagement(QWidget *parent) :
     ui(new Ui::ConnectionManagement)
 {
     ui->setupUi(this);
+
+    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    this->setAttribute(Qt::WA_TranslucentBackground, true);
 }
 
 ConnectionManagement::~ConnectionManagement()
