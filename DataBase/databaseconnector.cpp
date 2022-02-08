@@ -39,5 +39,6 @@ void DataBaseConnector::on_chooseButton_clicked()
 void DataBaseConnector::on_cancelButton_clicked()
 {
     hide();
+    emit unblur();
 }
 

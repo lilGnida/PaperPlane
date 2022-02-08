@@ -8,6 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_TranslucentBackground, true);
 
+    blurMainWindow = new QGraphicsBlurEffect(this);
+    blurMainWindow->setBlurRadius(15);
+    blurMainWindow->setEnabled(false);
+    this->setGraphicsEffect(blurMainWindow);
+
     ui->setupUi(this);
     ui->graphicsView->setMouseTracking(true);
 
@@ -42,6 +47,11 @@ void MainWindow::addItemToScene(QGraphicsPixmapItem *item)
 Ui::MainWindow *MainWindow::getUi() const
 {
     return ui;
+}
+
+void MainWindow::blur(bool blur)
+{
+    blurMainWindow->setEnabled(false);
 }
 
 void MainWindow::dragInAction()
@@ -109,6 +119,7 @@ void MainWindow::on_verticalSlider_valueChanged(int value)
 void MainWindow::on_addNewConnection_triggered()
 {
     networkController->showNewUdpConnectionWindow();
+    blurMainWindow->setEnabled(true);
 }
 
 
@@ -123,12 +134,14 @@ void MainWindow::on_reloadMap_triggered()
 void MainWindow::on_connectDB_triggered()
 {
     dbConnectorController->showDataBaseConnectionWindow();
+    blurMainWindow->setEnabled(true);
 }
 
 
 void MainWindow::on_manageConnections_triggered()
 {
     networkController->showConnectionManagmentWindow();
+    blurMainWindow->setEnabled(true);
 }
 
 

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QPropertyAnimation>
+#include <QGraphicsBlurEffect>
 #include "Map/controller.h"
 #include "Map/mapviewcontroller.h"
 #include "network/networkcontroller.h"
@@ -22,6 +23,8 @@ public:
 
     Ui::MainWindow *getUi() const;
 
+    void blur(bool blur);
+
 private:
     Ui::MainWindow *ui;
     SceneController *scene;
@@ -34,6 +37,8 @@ private:
     int zScale = 3;
 
     QPropertyAnimation *sideBarAnimation;
+    QGraphicsBlurEffect *blurMainWindow;
+    bool mainWindowIsBlured = false;
 
 public slots:
     void addItemToScene(QGraphicsPixmapItem *item);

@@ -21,6 +21,7 @@ public:
 
     void showNewUdpConnectionWindow();
     void showConnectionManagmentWindow();
+    void unblurMainWindow();
     void setupNewUdpConnection(QString ip, QString port);
 
 public slots:

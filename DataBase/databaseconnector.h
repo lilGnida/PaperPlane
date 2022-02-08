@@ -29,6 +29,9 @@ private:
     QString dbPath = "";
     bool connectionStatus = false;
 
+signals:
+    void unblur();
+
 };
 
 #endif // DATABASECONNECTOR_H

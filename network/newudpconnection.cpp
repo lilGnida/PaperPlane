@@ -22,6 +22,7 @@ NewUdpConnection::~NewUdpConnection()
 void NewUdpConnection::on_cancelButton_clicked()
 {
     hide();
+    emit unblur();
 }
 
 void NewUdpConnection::on_acceptButton_clicked()

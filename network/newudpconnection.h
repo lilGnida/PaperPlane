@@ -28,6 +28,7 @@ private:
 
 signals:
     void setupNewUdpConnection(QString ip, QString port);
+    void unblur();
 };
 
 #endif // NEWUDPCONNECTION_H

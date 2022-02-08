@@ -21,6 +21,9 @@ public:
 private slots:
     void on_exitButton_clicked();
 
+signals:
+    void unblur();
+
 private:
     Ui::ConnectionManagement *ui;
     QStandardItemModel *tableModel;

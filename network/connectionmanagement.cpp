@@ -34,5 +34,6 @@ void ConnectionManagement::showConnectionManagementWindow()
 void ConnectionManagement::on_exitButton_clicked()
 {
     hide();
+    emit unblur();
 }
 

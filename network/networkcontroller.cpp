@@ -1,4 +1,5 @@
 #include "networkcontroller.h"
+#include "mainwindow.h"
 #include <QDebug>
 
 NetworkController::NetworkController(MainWindow *wnd)
@@ -9,6 +10,8 @@ NetworkController::NetworkController(MainWindow *wnd)
 
     //connect
     connect(newUdpConnection, &NewUdpConnection::setupNewUdpConnection, this, &NetworkController::setupNewUdpConnection);
+    connect(newUdpConnection, &NewUdpConnection::unblur, this, &NetworkController::unblurMainWindow);
+    connect(connectionManager, &ConnectionManagement::unblur, this, &NetworkController::unblurMainWindow);
 }
 
 NetworkController::~NetworkController() {
@@ -23,6 +26,11 @@ void NetworkController::showNewUdpConnectionWindow()
 void NetworkController::showConnectionManagmentWindow()
 {
     connectionManager->showConnectionManagementWindow();
+}
+
+void NetworkController::unblurMainWindow()
+{
+    window->blur(false);
 }
 
 void NetworkController::setupNewUdpConnection(QString ip, QString port)

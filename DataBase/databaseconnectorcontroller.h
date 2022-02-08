@@ -2,20 +2,25 @@
 #define DATABASECONNECTORCONTROLLER_H
 
 #include <QObject>
+#include <QMainWindow>
 #include <DataBase/databaseconnector.h>
+
+class MainWindow;
 
 class DataBaseConnectorController : public QObject
 {
-
     Q_OBJECT
 
 public:
-    DataBaseConnectorController(QObject *parent);
+    DataBaseConnectorController(MainWindow *wnd);
+    ~DataBaseConnectorController();
 
     void showDataBaseConnectionWindow();
+    void unblurMainWindow();
 
 private:
     DataBaseConnector *dbConnector = nullptr;
+    MainWindow *window = nullptr;
 };
 
 #endif // DATABASECONNECTORCONTROLLER_H
