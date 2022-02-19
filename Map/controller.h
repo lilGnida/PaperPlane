@@ -4,6 +4,7 @@
 #include <QThread>
 #include <QMainWindow>
 #include "Map/mapWorker.h"
+#include "PlaneProcessor/planeprocessor.h"
 
 class MainWindow;
 
@@ -11,15 +12,21 @@ class Controller: public QObject
 {
     Q_OBJECT
 
-    QThread *modelThread = nullptr;
+//    QThread *modelThread = nullptr;
+    QThread *planeProcessorThread = nullptr;
 
 public:
     Controller(MainWindow *wnd);
     ~Controller();
 
+    MapWorker* getMapWorker();
+    MainWindow* getMainWindow();
+    PlaneProcessor* getPlaneProcessor();
+
 private:
     MapWorker *mapWorker = nullptr;
     MainWindow *window = nullptr;
+    PlaneProcessor *planeProcessor = nullptr;
 
 public slots:
 

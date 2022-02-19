@@ -1,8 +1,8 @@
-#include "Map/mapWorker.h"
+#include "mapWorker.h"
 
 void MapWorker::loadMap(QString dbPath, int zScale)
 {
-    dataBase = new DBManager(dbPath.arg(zScale));
+    DBManager *dataBase = new DBManager(dbPath.arg(zScale));
     dataBase->getDBconnectionStatus();
     dataBase->loadTiles();
 
@@ -14,15 +14,14 @@ void MapWorker::loadMap(QString dbPath, int zScale)
 
         emit sendItemToScene(item);
     }
+//    dataBase->disconnect();
+    delete dataBase;
 }
 
 void MapWorker::updateMap(QString dbPath, QRect visibleRect, int zScale)
 {
-    if (dataBase->getDBpath() != dbPath.arg(zScale)) {
-        dataBase->disconnect();
-        dataBase = new DBManager(dbPath.arg(zScale));
-        dataBase->getDBconnectionStatus();
-    }
+    DBManager *dataBase = new DBManager(dbPath.arg(zScale));
+    dataBase->getDBconnectionStatus();
     dataBase->loadTilesIn(visibleRect);
 
     for (int i = 0; i < dataBase->getTiles().count(); i++) {
@@ -33,6 +32,8 @@ void MapWorker::updateMap(QString dbPath, QRect visibleRect, int zScale)
 
         emit sendItemToScene(item);
     }
+//    dataBase->disconnect();
+    delete dataBase;
 }
 
 ////Отображение координат в статусбаре

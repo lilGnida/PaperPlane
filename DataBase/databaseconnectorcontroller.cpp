@@ -21,5 +21,5 @@ void DataBaseConnectorController::showDataBaseConnectionWindow()
 
 void DataBaseConnectorController::unblurMainWindow()
 {
-    window->blur(false);
+    window->blur();
 }

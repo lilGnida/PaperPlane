@@ -9,7 +9,7 @@
 #include <QDebug>
 #include <QList>
 #include <QPixmap>
-#include "Map/maptile.h"
+#include "maptile.h"
 
 class DBManager
 {
@@ -17,7 +17,7 @@ public:
     DBManager(const QString& path);
     ~DBManager();
 
-    QSqlTableModel *DB_tableModel;
+//    QSqlTableModel *DB_tableModel;
 
 //    void insertDataInDB(QStringList data);
 

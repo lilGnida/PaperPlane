@@ -3,7 +3,7 @@
 DataBaseManager::DataBaseManager(QString &dbPath)
 {
     if (dbPath != "") {
-        db = QSqlDatabase::addDatabase("QSQLITE");
+        db = QSqlDatabase::addDatabase("QSQLITE", "Aeroplan");
         db.setDatabaseName(dbPath);
 
         DB_tableModel = new QSqlTableModel(nullptr, db);

@@ -361,6 +361,7 @@ QPushButton::pressed
     </property>
     <addaction name="addNewConnection"/>
     <addaction name="manageConnections"/>
+    <addaction name="workFromFolder"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
@@ -402,6 +403,11 @@ QPushButton::pressed
    </property>
    <property name="toolTip">
     <string>Подключить базу данных для анализа входящих данных</string>
+   </property>
+  </action>
+  <action name="workFromFolder">
+   <property name="text">
+    <string>Работать из папки</string>
    </property>
   </action>
  </widget>

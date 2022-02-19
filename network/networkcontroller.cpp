@@ -1,4 +1,5 @@
 #include "networkcontroller.h"
+//#include "Map/mapWorker.h"
 #include "mainwindow.h"
 #include <QDebug>
 
@@ -7,11 +8,14 @@ NetworkController::NetworkController(MainWindow *wnd)
 {
     newUdpConnection = new NewUdpConnection;
     connectionManager = new ConnectionManagement;
+//    folderConnection = new FolderConnection;
 
     //connect
     connect(newUdpConnection, &NewUdpConnection::setupNewUdpConnection, this, &NetworkController::setupNewUdpConnection);
     connect(newUdpConnection, &NewUdpConnection::unblur, this, &NetworkController::unblurMainWindow);
     connect(connectionManager, &ConnectionManagement::unblur, this, &NetworkController::unblurMainWindow);
+//    connect(folderConnection, &FolderConnection::unblur, this, &NetworkController::unblurMainWindow);
+//    connect(folderConnection, &workFromFolder::sendPlaneData, window->getController()->getMapWorker(), &MapWorker::drawAircraftTrack);
 }
 
 NetworkController::~NetworkController() {
@@ -28,9 +32,14 @@ void NetworkController::showConnectionManagmentWindow()
     connectionManager->showConnectionManagementWindow();
 }
 
+//void NetworkController::showFolderConnection()
+//{
+//    folderConnection->show();
+//}
+
 void NetworkController::unblurMainWindow()
 {
-    window->blur(false);
+    window->blur();
 }
 
 void NetworkController::setupNewUdpConnection(QString ip, QString port)

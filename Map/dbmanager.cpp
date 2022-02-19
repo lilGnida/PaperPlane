@@ -1,4 +1,4 @@
-#include "Map/dbmanager.h"
+#include "dbmanager.h"
 
 DBManager::DBManager(const QString& path)
 {   
@@ -6,7 +6,7 @@ DBManager::DBManager(const QString& path)
         db = QSqlDatabase::addDatabase("QSQLITE");
         db.setDatabaseName(path);
 
-        DB_tableModel = new QSqlTableModel(nullptr, db);
+        QSqlTableModel *DB_tableModel = new QSqlTableModel(nullptr, db);
 
         DB_tableModel->setTable("map");
         DB_tableModel->setEditStrategy(QSqlTableModel::OnFieldChange);
@@ -25,6 +25,7 @@ DBManager::~DBManager()
 {
     if (db.isOpen()) {
         db.close();
+        db.removeDatabase(QSqlDatabase::defaultConnection);
     }
 }
 

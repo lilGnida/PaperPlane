@@ -2,7 +2,6 @@
 #define NETWORKCONTROLLER_H
 
 #include <QMainWindow>
-#include <QThread>
 #include <QVector>
 #include <QByteArray>
 #include <QProcess>
@@ -21,7 +20,9 @@ public:
 
     void showNewUdpConnectionWindow();
     void showConnectionManagmentWindow();
+//    void showFolderConnection();
     void unblurMainWindow();
+
     void setupNewUdpConnection(QString ip, QString port);
 
 public slots:
@@ -30,6 +31,7 @@ public slots:
 private:
     NewUdpConnection *newUdpConnection = nullptr;
     ConnectionManagement *connectionManager = nullptr;
+//    FolderConnection *folderConnection = nullptr;
     MainWindow *window = nullptr;
 
     QVector <QProcess*> processList;

@@ -18,9 +18,16 @@ SOURCES += \
     Map/controller.cpp \
     Map/dbmanager.cpp \
     Map/mapWorker.cpp \
+    Map/maplayer.cpp \
     Map/maptile.cpp \
     Map/mapviewcontroller.cpp \
     Map/scenecontroller.cpp \
+    PlaneProcessor/plane.cpp \
+    PlaneProcessor/planegraphicsobject.cpp \
+    PlaneProcessor/planeprocessor.cpp \
+    WorkFromFolder/folderconnection.cpp \
+    WorkFromFolder/folderconnectioncontroller.cpp \
+    WorkFromFolder/folderworker.cpp \
     main.cpp \
     mainwindow.cpp \
     network/connectionmanagement.cpp \
@@ -35,9 +42,16 @@ HEADERS += \
     Map/controller.h \
     Map/dbmanager.h \
     Map/mapWorker.h \
+    Map/maplayer.h \
     Map/maptile.h \
     Map/mapviewcontroller.h \
     Map/scenecontroller.h \
+    PlaneProcessor/plane.h \
+    PlaneProcessor/planegraphicsobject.h \
+    PlaneProcessor/planeprocessor.h \
+    WorkFromFolder/folderconnection.h \
+    WorkFromFolder/folderconnectioncontroller.h \
+    WorkFromFolder/folderworker.h \
     mainwindow.h \
     network/connectionmanagement.h \
     network/networkcontroller.h \
@@ -46,6 +60,7 @@ HEADERS += \
 
 FORMS += \
     DataBase/databaseconnector.ui \
+    WorkFromFolder/folderconnection.ui \
     mainwindow.ui \
     network/connectionmanagement.ui \
     network/newudpconnection.ui

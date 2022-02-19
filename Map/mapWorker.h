@@ -5,8 +5,9 @@
 #include <QWidget>
 #include <QDebug>
 #include <QGraphicsScene>
-#include "Map/dbmanager.h"
-#include "Map/scenecontroller.h"
+#include "dbmanager.h"
+#include "scenecontroller.h"
+#include "maplayer.h"
 
 class MapWorker: public QWidget
 {
@@ -15,7 +16,7 @@ class MapWorker: public QWidget
 public:
 
 private:
-    DBManager *dataBase = nullptr;
+//    DBManager *dataBase = nullptr;
     QPointF sphereCoordinates;
 
 public slots:
